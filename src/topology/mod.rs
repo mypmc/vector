@@ -687,7 +687,7 @@ fn handle_errors(
         .map_err(|_| ())
         .flatten()
         .or_else(move |()| {
-            error!("Unhandled error");
+            error!("An error occured that vector can't fix");
             let _ = abort_tx.unbounded_send(());
             Err(())
         })
